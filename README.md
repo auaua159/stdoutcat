@@ -15,19 +15,32 @@ git clone git@github.com:auaua159/stdoutcat.git
     "ChannelID": "YOUR_CHANNEL_ID"
 }
 ```
-`/cmd/app` でビルド
+`stdoutcat/cmd/app` でビルド
 ```
 go build -o stdoutcat
+```
+### コマンド化したい場合
+`main.go` 内の `var config Config` をトークンとチャンネル ID を埋め込むハードコーディングで書き換えてからビルドしてください
+```
+config := Config{
+		Token:     "YOUR_BOT_TOKEN",
+		ChannelID: "YOUR_CHANNEL_ID",
+	}
 ```
 バイナリを移動
 ```
 mv stdoutcat /usr/local/bin
 ```
 
-# Usage
+## Usage
 標準出力をパイプして流します
 
 例
 ```
-echo "Hello, Discord!" | stdoutcat
+echo "Hello, Discord!" | ./stdoutcat
+```
+
+コマンド化した場合
+```
+echo "Good Bye, Discord!" | stdoutcat
 ```
