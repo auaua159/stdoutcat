@@ -1,5 +1,5 @@
 # stdoutcat
-This is the bot send stdout as message to discord channel.
+This is cli command that make your bot send stdout as message to discord channel.
 ## Getting Started
 please clone
 
